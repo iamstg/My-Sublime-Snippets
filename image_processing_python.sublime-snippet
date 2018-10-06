@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+image = cv2.imread('pic1.png', cv2.IMREAD_COLOR)
+cv2.imshow('Orignal Image', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>image_processing</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Image Processing Boilerplates</description>
+</snippet>
