@@ -1,0 +1,79 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+#define nl ('\n')
+#define pb push_back
+#define MOD 1000000007
+#define MAX 100000
+typedef long long ll;
+using namespace std;
+//ll expo(ll x,ll y,ll M){ if(y==0) return 1; ll z = expo(x,y/2,M); if(y&1) return (1ll * ((1ll * x * z)%M) * z)%M; else return (1ll * z * z)%M;}
+//ll gcd(ll x,ll y){ if(x==0) return y; return gcd(y%x,x); }
+
+/*************DFS**********************************/
+/*int vis[MAX+5]={};vector<int> gr[MAX+5];
+void dfs(int v)
+{
+	vis[v] = 1;
+	for(int i=0;i<gr[v].size();i++)
+	{
+		int ch = gr[v][i];
+		if(!vis[ch]){
+			dfs(ch);
+		}
+	}
+}*/
+/***************************************************/
+
+/*********** Segment ******************************/
+/*ll arr[MAX+5] ; ll segtree[4*MAX + 5];
+
+void constructTree(int low,int high,int pos)
+{
+	if(low == high){
+		segtree[pos]=arr[low];
+		return;
+	}
+	int mid=(low+high)/2;
+	constructTree(low,mid,2*pos + 1);
+	constructTree(mid+1,high,2*pos + 2);
+	segtree[pos] = (ll)segtree[2*pos + 1] + segtree[2*pos + 2];
+}
+
+ll Query(int ql,int qh,int l,int h,int p){
+	if(ql<=l && qh>=h)		//total overlap
+		return segtree[p];
+	if(ql>h || qh<l)	//no overlap
+		return 0;
+	int mid=(l+h)/2;
+	return (ll)Query(ql,qh,l,mid,2*p +1)+Query(ql,qh,mid+1,h,2*p +2);
+}
+
+void update(int low,int high,int pos,int p_upd)
+{
+	if(low == high){
+		segtree[pos] = arr[low];	//arr value is changed now
+		return;
+	}
+	int mid=(low+high)/2;
+	if(p_upd <= mid)
+		update(low,mid,2*pos+1,p_upd);
+	else
+		update(mid+1,high,2*pos+2,p_upd);
+
+	segtree[pos] = (ll)segtree[2*pos+1] + segtree[2*pos+2];
+}*/
+/**************************************************/
+
+int main(){
+	ios::sync_with_stdio(0);cin.tie(0);
+	int i,j;
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>start</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+	<description> Competitive Programming starter </description>
+</snippet>
