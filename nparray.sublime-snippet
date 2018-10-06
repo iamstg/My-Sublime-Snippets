@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+# data type can be set as the second parameter
+numpy_array = np.zeros((DIM1, DIM2))
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nparray</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>initialize a numpy array</description>
+</snippet>
