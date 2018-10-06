@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+def padImageWithZeros(img, padded_rows, padded_cols):
+	""" Pad the grayscale image with zeros.
+
+	New image will be of size:
+	new_img .shape = ((img.shape[0]+ 2*padded_rows), 
+					  (img.shape[1] + 2*padded_cols))
+
+	Args:
+		img: a grayscale image
+		padded_rows: number of rows the image needs 
+		to be padded with on both sides
+		padded_cols: number of columns the image 
+		needs to be padded with both above and below
+
+	Returns:
+		padded image
+	"""
+	new_img = np.zeros((img.shape[0] + 2*padded_rows, img.shape[1] + 2*padded_cols), np.uint8)
+	new_img[padded_rows:(new_img.shape[0] - padded_rows), padded_cols:(new_img.shape[1] - padded_cols)]
+	return new_img
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>padImageWithZeros</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Function to pad grayscale image with zeros.</description>
+</snippet>

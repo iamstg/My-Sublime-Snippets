@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+sorted(xs.items(), key=lambda x: x[1])
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dict_sort_by_value</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Sort dict by value</description>
+</snippet>
