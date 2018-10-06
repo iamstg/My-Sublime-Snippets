@@ -1,0 +1,112 @@
+<snippet>
+	<content><![CDATA[
+im_64 = np.zeros((64,64), np.uint8)
+im_128 = np.zeros((128,128), np.uint8)
+im_256 = np.zeros((256,256), np.uint8)
+im_1024 = np.zeros((1024,1024), np.uint8)
+k_values = [5,11,15,21]
+
+fig = plt.figure()
+ax1 = fig.add_subplot(221)
+ax2 = fig.add_subplot(222)
+ax3 = fig.add_subplot(223)
+ax4 = fig.add_subplot(224)
+# ax1.title.set_text('img size: 64*64')
+# ax2.title.set_text('img size: 128*128')
+# ax3.title.set_text('img size: 256*256')
+# ax4.title.set_text('img size: 1024*1024')
+
+naive_64 = []
+for k in k_values:
+	start_time = time.time()
+	## 1 . Lowpass Filter
+	# x = lowPassFilter(im_64,k)
+	## or 2. Median Filter
+	x = medianFilter(im_64,k)
+	naive_64.append(time.time() - start_time)
+
+ax1.plot(k_values, naive_64)
+
+naive_128 = []
+for k in k_values:
+	start_time = time.time()
+	# x = lowPassFilter(im_128,k)
+	x = medianFilter(im_128,k)
+	naive_128.append(time.time() - start_time)
+
+ax2.plot(k_values, naive_128)
+
+naive_256 = []
+for k in k_values:
+	start_time = time.time()
+	# x = lowPassFilter(im_256,k)
+	x = medianFilter(im_256,k)
+	naive_256.append(time.time() - start_time)
+
+ax3.plot(k_values, naive_256)
+
+naive_1024 = []
+for k in k_values:
+	start_time = time.time()
+	# x = lowPassFilter(im_1024,k)
+	x = medianFilter(im_1024,k)
+	naive_1024.append(time.time() - start_time)
+
+ax4.plot(k_values, naive_1024)	
+
+eff_64 = []
+for k in k_values:
+	start_time = time.time()
+	# x = efficientLowPassFilter(im_64,k)
+	x = efficientMedianFilter(im_64,k)
+	eff_64.append(time.time() - start_time)
+
+ax1.plot(k_values, eff_64)
+ax1.set_xlabel('Different values of k : k*k window')
+ax1.set_ylabel('Runtime in seconds')
+ax1.legend(['Naive: img 64*64','Efficient: img 64*64'])
+
+eff_128 = []
+for k in k_values:
+	start_time = time.time()
+	# x = efficientLowPassFilter(im_128,k)
+	x = efficientMedianFilter(im_128,k)	
+	eff_128.append(time.time() - start_time)
+
+ax2.plot(k_values, eff_128)
+ax2.set_xlabel('Different values of k : k*k window')
+ax2.set_ylabel('Runtime in seconds')
+ax2.legend(['Naive: img 128*128','Efficient: img 128*128'])
+
+eff_256 = []
+for k in k_values:
+	start_time = time.time()
+	# x = efficientLowPassFilter(im_256,k)
+	x = efficientMedianFilter(im_256,k)
+	eff_256.append(time.time() - start_time)
+
+ax3.plot(k_values, eff_256)
+ax3.set_xlabel('Different values of k : k*k window')
+ax3.set_ylabel('Runtime in seconds')
+ax3.legend(['Naive: img 256*256','Efficient: img 256*256'])
+
+eff_1024 = []
+for k in k_values:
+	start_time = time.time()
+	# x = efficientLowPassFilter(im_1024,k)
+	x = efficientMedianFilter(im_1024,k)	
+	eff_1024.append(time.time() - start_time)
+
+ax4.plot(k_values, eff_1024)
+ax4.set_xlabel('Different values of k : k*k window')
+ax4.set_ylabel('Runtime in seconds')
+ax4.legend(['Naive: img 1024*1024','Efficient: img 1024*1024'])
+
+plt.show()
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>plot_snippet</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Matplotlib multiple plots complete snippet</description>
+</snippet>

@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+if any((flag1, flag2, flag3)):
+	print('Test passed')
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>test_multiple_flags</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.python</scope>
+	<description>Test if any of the flags is true</description>
+</snippet>
